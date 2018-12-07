@@ -9,6 +9,13 @@ import datetime as dt
 from datetime import datetime, timedelta
 from sklearn.base import TransformerMixin
 from nltk.stem import SnowballStemmer
+import nltk.data
+import nltk
+from bs4 import BeautifulSoup
+import re
+import nltk
+from nltk.corpus import stopwords
+
 
 ## Transform numerical columns
 class DataFrameImputer(TransformerMixin):
@@ -94,9 +101,9 @@ def process_text_columns(risks):
 
     stemmer = SnowballStemmer('english')
 
-    risks=risks.apply(lambda x: [stemmer.stem(w) for w in x])
+    risks_words=risks.apply(lambda x: [stemmer.stem(w) for w in x])
 
     # WE regroup every row of text to one string
 
     risks=risks.apply(lambda x: ' '.join(x))
-    return risks
+    return risks,risks_words
