@@ -1,7 +1,7 @@
 # Predicting IPO Share Price
 Data Science for Business course Project
 
-Members : Julien Belguise / Guillaume Grandjean / Mariem Ali Belhadj
+Members : Julien Belguise / Guillaume Grandjean / Mariem Belhaj ali
 
 
 
