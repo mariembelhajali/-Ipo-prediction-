@@ -3,7 +3,11 @@ Data Science for Business course Project
 
 Members : Julien Belguise / Guillaume Grandjean / Mariem Ali Belhadj
 
+
+
 All the code is inside the notebook called project_description
+The notebook begins by a Resume of all the sections inside the notebook
+
 
 We use 2 additionnal Dataset:
 - us_postal_codes.csv : dataset with the zip code for every state in the us
