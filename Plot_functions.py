@@ -4,7 +4,7 @@ from sklearn.metrics import roc_curve
 
 
 
-def plot_roc_curve(model,y_pred):
+def plot_roc_curve(model,y_pred,y_test):
 
     fpr_lr, tpr_lr, _ = roc_curve(y_test, y_pred[:, 1])
 
