@@ -82,10 +82,11 @@ def process_categorical_with_sep(ipo_processing,col,char,columns_to_drop):
     return ipo_processing,columns_to_drop
 
 def process_cat_columns(ipo_processing,col,columns_to_drop):
-    ipo_processing[col] = replace_nan(ipo_processing[col],'nan')
-    ipo_processing = pd.concat([ipo_processing,pd.get_dummies(ipo_processing[col])],axis = 1)
-    columns_to_drop.append(col)
-    return ipo_processing,columns_to_drop
+    if(col in ipo_processing.columns):
+        ipo_processing[col] = replace_nan(ipo_processing[col],'nan')
+        ipo_processing = pd.concat([ipo_processing,pd.get_dummies(ipo_processing[col])],axis = 1)
+        columns_to_drop.append(col)
+        return ipo_processing,columns_to_drop
 
 def process_text_columns(risks):
     #remove terms with digits-----------------------------------------------------------------------
