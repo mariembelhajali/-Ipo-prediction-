@@ -98,7 +98,7 @@ def process_text_columns(risks):
     risks = risks.apply(lambda x: x.lower().split())  
 
     #stop word removal--------------------------------------------------------------------------
-
+    print('Removing stopwors ...')
     # Download stop words dataset of NLTK library
     nltk.download('stopwords')
     # Remove stop words
@@ -107,6 +107,7 @@ def process_text_columns(risks):
 
 
     risks=risks.apply(lambda x: [w for w in x if w not in stop_words])
+    print('Stemming ...')
 
     #stemming-------------------------------------------------------------------------------------------
     
@@ -114,9 +115,9 @@ def process_text_columns(risks):
     stemmer = SnowballStemmer('english')
 
     risks_words=risks.apply(lambda x: [stemmer.stem(w) for w in x])
-    risks=risks.apply(lambda x: [stemmer.stem(w) for w in x])
+    risks_words = risks_words.apply(lambda x : x[2:])
     # WE regroup every row of text to one string
-    risks=risks.apply(lambda x: ' '.join(x))
+    risks = risks_words.apply(lambda x: ' '.join(x))
     return risks,risks_words
 
 
