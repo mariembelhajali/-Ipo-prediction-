@@ -5,7 +5,7 @@ import sklearn
 
 
 
-def plot_roc_curve(model,y_pred,y_test):
+def plot_roc_curve_(model,y_pred,y_test):
 
     fpr_lr, tpr_lr, _ = roc_curve(y_test, y_pred[:, 1])
 
