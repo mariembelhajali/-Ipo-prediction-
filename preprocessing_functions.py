@@ -114,7 +114,7 @@ def process_text_columns(risks):
     stemmer = SnowballStemmer('english')
 
     risks_words=risks.apply(lambda x: [stemmer.stem(w) for w in x])
-
+    risks=risks.apply(lambda x: [stemmer.stem(w) for w in x])
     # WE regroup every row of text to one string
     risks=risks.apply(lambda x: ' '.join(x))
     return risks,risks_words
